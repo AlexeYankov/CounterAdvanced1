@@ -1,17 +1,27 @@
 import React, {useState} from 'react';
 import "./button.css";
+import Button from "./components/Button";
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
+export type ButtonsType = {
+    id: number
+    title: string
+}
+
+type ButtonCounterType = {}
 
 const ButtonCounter = () => {
     let [counting, setCounter] = useState<number>(0)
-    let [minValue, setMinValue] = useState<number>(0)
-    let [maxValue, setMaxValue] = useState<number>(1)
+    let [minValue, setMinValue] = useState<number>(4)
+    let [maxValue, setMaxValue] = useState<number>(8)
     let [error, setError] = useState<boolean>(false)
     let [errorMin, setErrorMin] = useState<boolean>(false)
     let [errorMax, setErrorMax] = useState<boolean>(false)
-    const buttonsValue = [
-        'set',
-        'reset',
-        'inc'
+    const buttonsValue: ButtonsType[] = [
+        {id: 0, title: 'set'},
+        {id: 1, title: 'reset'},
+        {id: 2, title: 'inc'}
     ]
 
     const reset = () => {
@@ -21,23 +31,34 @@ const ButtonCounter = () => {
     const increment1 = () => {
         if (counting < 5) {
             setCounter(counting + 1)
-        } else if (counting = 5)  {
+        } else if (counting = 5) {
             setError(true)
-        } else {}
+        } else {
+        }
     }
     const incrementMax = () => {
-        if (maxValue > minValue) {
+        if (maxValue >= minValue) {
             setMaxValue(maxValue + 1)
-        } else if (maxValue === minValue)  {
+        } else if (maxValue === minValue) {
             setError(true)
-        } else {}
+        } else {
+        }
+    }
+    const decrementMax = () => {
+        if (maxValue > minValue) {
+            setMaxValue(maxValue - 1)
+        } else if (maxValue === minValue) {
+            setError(true)
+        } else {
+        }
     }
     const decrement = () => {
         if (minValue > 0) {
             setMinValue(minValue - 1)
-        } else if (minValue < 0)  {
+        } else if (minValue < 0) {
             setError(true)
-        } else {}
+        } else {
+        }
     }
     const resetError = error === true ? {
         // display: 'none',
@@ -80,11 +101,14 @@ const ButtonCounter = () => {
             <span className='parentButton'>
                 <span className="valueCounterTop">
                 <span className="subValeMax">Max value: {maxValue}</span>
-                <button title={buttonsValue[0]} onClick={incrementMax} className="incMx"></button>
-                    <span></span>
+                    <div>
+                    <Button title={'inc'} className="incMxVl" onClick={incrementMax} iconStyle={<KeyboardArrowUpIcon />}></Button>
+                    <Button title={'dec'} className="decMxVl" onClick={decrementMax}/>
+                    </div>
+                    {/*<button title={buttonsValue.[id]} onClick={incrementMax} className="incMx"></button>*/}
                     {errorMax && <div style={resetErrorMinMax}>Please set correct number</div>}
                     <span className="subValeMin">Min value: {minValue}</span>
-                <button onClick={decrement} className="incMn"></button>
+                {/*<Button onClick={decrement} className="incMn">t</Button>*/}
                     {errorMin && <div style={resetErrorMinMax}>Please set correct number</div>}
                     </span>
                 <div className="valueCounterButtom">

@@ -81,10 +81,16 @@
     border-radius: 7px;
     position: absolute;
 }
-.incMx {
+.incMxVl {
     height: 1px;
     width: 1px;
     margin: 24px 0px 0px 225px;
+    position: absolute;
+}
+.decMxVl {
+    height: 1px;
+    width: 1px;
+    margin: 30px 0px 0px 225px;
     position: absolute;
 }
 .incMn {

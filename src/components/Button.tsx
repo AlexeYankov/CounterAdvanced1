@@ -1,20 +1,17 @@
-import React from 'react';
+import React,{ButtonHTMLAttributes, DetailedHTMLProps}  from 'react';
 
-type ButtonType = {
-    title: string
+type ButtonTypes = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
+// type AdvancedButtonTypes = ButtonTypes & {
+//     className: string
+// }
 
-}
-
-
-const Button = (props: ButtonType) => {
-    const callBack = (e: React.MouseEvent<HTMLButtonElement>) => {
-        console.log('f')
-    }
-
+const Button: React.FC<ButtonTypes> = ({...restProps}) => {
     return (
         <div>
-            <button onClick={callBack}>{props.title}ff</button>
+            <button
+                {...restProps}
+            />
         </div>
     );
 };

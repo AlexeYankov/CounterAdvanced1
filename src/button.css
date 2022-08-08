@@ -51,23 +51,35 @@
     border-radius: 7px;
     font-size: 40px;
     border: none;
-    margin: 30px 0px 60px 110px;
+    margin: 30px 0px 60px 100px;
+    color: black;
+}
+.valeError {
+    opacity: 0;
 }
 .subValeMax {
     position: absolute;
     border-radius: 7px;
-    font-size: 30px;
+    font-size: 20px;
     border: none;
     margin: 10px 0px 20px 20px;
     color: #61dafb;
 }
+.subValeMaxInput {
+    border-radius: 7px;
+    font-size: 20px;
+    border: none;
+    margin: 50px 0px 70px 80px;
+    color: #61dafb;
+    height: 30px;
+    width: 30px;
+}
 .subValeMin {
     position: absolute;
     border-radius: 7px;
-    font-size: 40px;
     border: none;
     margin: 60px 0px 40px 20px;
-    font-size: 30px;
+    font-size: 20px;
     color: #61dafb;
 }
 .inc {
@@ -82,30 +94,52 @@
     position: absolute;
 }
 .incMxVl {
-    height: 1px;
-    width: 1px;
-    margin: 24px 0px 0px 225px;
+    margin: 20px 0px 0px 220px;
     position: absolute;
+    display: flex;
+    border-style: none;
+    background-color: #252e34;
+    width: 5px;
+    height: 5px;
+    justify-content: center;
 }
 .decMxVl {
-    height: 1px;
-    width: 1px;
-    margin: 30px 0px 0px 225px;
+    width: 5px;
+    height: 5px;
+    margin: 55px 0px 0px 220px;
     position: absolute;
+    background-color: #252e34;
+    justify-content: center;
+    display: flex;
+    border-style: none;
+
 }
-.incMn {
-    height: 1px;
-    width: 1px;
-    margin: 32px 0px 0px 225px;
+.incMnVl {
+    margin: 70px 0px 0px 220px;
     position: absolute;
+    width: 5px;
+    height: 5px;
+    justify-content: center;
+    background-color: #252e34;
+    display: flex;
+    border-style: none;
+}
+.decMnVl {
+    margin: 105px 0px 0px 220px;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    justify-content: center;
+    background-color: #252e34;
+    display: flex;
+    border-style: none;
 }
 .reset {
     height: 30px;
+    margin: 5px 0px 0px 130px;
     width: 70px;
     color: darkolivegreen;
     background-color: #61dafb;
-    margin-top: 5px;
-    margin-left: 0px;
     border-color: #61dafb;
     border-width: 2px;
     border-radius: 7px;
@@ -117,18 +151,90 @@
     position:absolute;
     margin-top: 5px;
     border-color: #61dafb;
-    border-wdidth: 2px;
     border-radius: 7px;
     margin-left: 95px
 }
-.input {
+.setError {
     height: 30px;
     width: 70px;
     background-color: #61dafb;
     position:absolute;
     margin-top: 5px;
-    border-color: #61dafb;
-    border-wdidth: 2px;
     border-radius: 7px;
-    margin-left: 95px
+    margin-left: 95px;
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
+    background-color: darkred;
+    opacity: 0.4;
+}
+.arrowUp {
+    color: #61dafb;
+    width: 3px;
+    height: 3px;
+    margin: -12px;
+    padding: 0px;
+    text-align: center;
+    border-style: solid;
+    border-color: #61dafb;
+    transform: scale(0.4);
+    border-radius: 5px;
+}
+.arrowDown {
+    color: #61dafb;
+    margin: -33px;
+    padding: 0px;
+    text-align: center;
+    border-style: solid;
+    border-color: #61dafb;
+    border-radius: 5px;
+    transform: scale(0.4);
+}
+.InputValueMax {
+    background-color: #61dafb;
+    width: 90px;
+    height: 30px;
+    position: absolute;
+    margin: 5px 0px 0px 125px;
+    border-radius: 7px;
+    font-size: 20px;
+    text-align: center;
+    border-style: none;
+}
+.InputValueMin {
+    background-color: #61dafb;
+    width: 90px;
+    height: 30px;
+    position: absolute;
+    margin: 55px 0px 0px 125px;
+    border-radius: 7px;
+    font-size: 20px;
+    text-align: center;
+    border-style: none;
+}
+.InputValueMinError {
+    background-color: darkred;
+    width: 90px;
+    height: 30px;
+    position: absolute;
+    margin: 55px 0px 0px 125px;
+    border-radius: 7px;
+    font-size: 20px;
+    text-align: center;
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
+}
+.InputValueMaxError {
+    background-color: darkred;
+    width: 90px;
+    height: 30px;
+    position: absolute;
+    margin: 5px 0px 0px 125px;
+    border-radius: 7px;
+    font-size: 20px;
+    text-align: center;
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
 }

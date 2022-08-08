@@ -1,12 +1,14 @@
 import React,{ButtonHTMLAttributes, DetailedHTMLProps}  from 'react';
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 type ButtonTypes = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
+type AdvancedButtonTypes = ButtonTypes & {
+    arrowUp?: object
+    arrowDown?: object
+}
 
-// type AdvancedButtonTypes = ButtonTypes & {
-//     className: string
-// }
 
-const Button: React.FC<ButtonTypes> = ({...restProps}) => {
+const Button: React.FC<AdvancedButtonTypes> = ({arrowUp, arrowDown, ...restProps}) => {
     return (
         <div>
             <button

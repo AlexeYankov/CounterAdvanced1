@@ -10,7 +10,7 @@ type SuperInputTextPropsType = DefaultInputPropsType & { // и + ещё проп
     onEnter?: () => void
     error?: boolean
     title?: number
-    setValue?:(value: number) => void
+    onChange?:(e:ChangeEvent<HTMLInputElement>) => void
     value?: number
 
 }
@@ -20,7 +20,7 @@ const InputValue: React.FC<SuperInputTextPropsType> = (
         type, // достаём и игнорируем чтоб нельзя было задать другой тип инпута
         onChange, onChangeText,
         onKeyPress, onEnter,
-        error, setValue,
+        error,
         value,
 
         ...restProps// все остальные пропсы попадут в объект restProps
@@ -28,7 +28,7 @@ const InputValue: React.FC<SuperInputTextPropsType> = (
 ) => {
 
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue && setValue(+e.currentTarget.value)
+        onChange && onChange(e)
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyPress && onKeyPress(e);
